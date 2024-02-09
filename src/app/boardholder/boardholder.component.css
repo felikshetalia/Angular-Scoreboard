@@ -1,16 +1,24 @@
- .board-table table{
-    border: 1mm solid gray;
-    border-collapse: collapse;
-    align-self: center;
-    align-content: left;
-    width:fit-content;
+/* Styles for the table */
+.board-table {
+    border-collapse: collapse; /* This is crucial for borders to collapse into a single border */
+    margin: auto; /* Center the table horizontally */
+    width: fit-content; /* Adjust width as necessary */
 }
 
-th{
-    border-collapse: collapse;
-    border-color: gray;
+/* Styles for table headers and cells */
+.board-table th,
+.board-table td {
+    border: 1mm solid gray; /* Apply border to both th and td for consistency */
+    padding: 8px; /* Adjust padding as necessary for spacing inside cells */
 }
 
-h1{
+/* Optional: Styling for table headers for better distinction */
+.board-table th {
+    background-color: #f2f2f2; /* Light grey background for headers; adjust as needed */
+    text-align: left; /* Adjust text alignment as needed */
+}
+
+/* If you have specific styles for h1 or other elements, you can define them separately */
+h1 {
     color: red;
 }
