@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Scoreboard';
+  logo = 'img/zort.ico'
+  msg = 'zuhauahaaha debugging time!'
+  btnClicked : boolean = false
+  OnAdd(){
+    this.btnClicked = true
+  }
 }

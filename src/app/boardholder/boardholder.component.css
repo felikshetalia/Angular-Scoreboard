@@ -1,0 +1,16 @@
+ .board-table table{
+    border: 1mm solid gray;
+    border-collapse: collapse;
+    align-self: center;
+    align-content: left;
+    width:fit-content;
+}
+
+th{
+    border-collapse: collapse;
+    border-color: gray;
+}
+
+h1{
+    color: red;
+}
