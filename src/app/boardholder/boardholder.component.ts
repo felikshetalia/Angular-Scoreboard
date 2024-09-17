@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, ViewEncapsulation, input } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, ViewEncapsulation, input } from '@angular/core';
 
 
 export type BoardData = {
@@ -21,11 +21,12 @@ export type BoardData = {
   // `]
 })
 
-export class BoardholderComponent {
-
+export class BoardholderComponent implements OnInit {
   @Input() Board: BoardData;
   //playerNames: string[];
   //rows: any[][];
+  rowArray: number[];
+  columnArray: number[];
 
   constructor() {
   }
@@ -33,6 +34,20 @@ export class BoardholderComponent {
   OnInit(data:BoardData){
     this.Board.columns = data.columns;
     this.Board.rows = data.rows;
+  }
+  ngOnInit() {
+    this.initializeBoard();
+  }
+
+  ngOnChanges() {
+    this.initializeBoard(); // Reinitialize whenever input changes
+  }
+
+  initializeBoard() {
+    if (this.Board) {
+      this.rowArray = Array.from({ length: this.Board.rows }, (_, index) => index);
+      this.columnArray = Array.from({ length: this.Board.columns }, (_, index) => index);
+    }
   }
 
   // OnAssign(players:number, rounds:number){

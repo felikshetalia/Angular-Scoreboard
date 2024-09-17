@@ -12,6 +12,7 @@ export class AppComponent {
   logo = 'img/zort.ico'
   msg = 'zuhauahaaha debugging time!'
   btnClicked : boolean = false
+  Board: BoardData;
   OnAdd(){
     this.btnClicked = true;
   }
@@ -19,9 +20,12 @@ export class AppComponent {
     this.btnClicked = false;
   }
   OnSubmit(data: BoardData){
+    this.Board = data;
     this.btnClicked = false;
   }
-  Board: BoardData;
+  OnReset(){
+    this.Board = null;
+  }
   players: string[] = [];
   @ViewChild(BoardholderComponent) boardholder: BoardholderComponent;
 

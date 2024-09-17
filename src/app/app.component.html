@@ -8,11 +8,12 @@
 <body>
     <header>Welcome to the Scoreboard app!</header>
     <button (click)="OnAdd()">Add</button>
+    <button (click)="OnReset()">Reset</button>
     <main>
         @if(btnClicked === true){
             <app-form (close)="OnClose()" (submit)="OnSubmit($event)"/>
         }
-        <app-boardholder [Board]="Board" />
+        <app-boardholder *ngIf="Board" [Board]="Board" />
     </main>
 
 </body>
