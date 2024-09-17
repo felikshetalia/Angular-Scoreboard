@@ -1,4 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, ViewEncapsulation, input } from '@angular/core';
+
+
+export type BoardData = {
+  rows: number;
+  columns: number;
+}
 
 @Component({
   selector: 'app-boardholder',
@@ -14,10 +20,37 @@ import { Component, ViewEncapsulation } from '@angular/core';
   //   }
   // `]
 })
+
 export class BoardholderComponent {
 
+  @Input() Board: BoardData;
+  //playerNames: string[];
+  //rows: any[][];
 
-  ngOnInit(){
-
+  constructor() {
   }
+  
+  OnInit(data:BoardData){
+    this.Board.columns = data.columns;
+    this.Board.rows = data.rows;
+  }
+
+  // OnAssign(players:number, rounds:number){
+  //   this.Players = players;
+  //   this.Rounds = rounds;
+  // }
+
+  // ngOnChanges(): void{
+  //   //this.playerNames = this.playerNames;
+  //   this.playerNames = Array.from({ length: this.Players }, (_, i) => `Player ${i + 1}`);
+  //   this.OnSubmit();
+  // }
+
+  // OnSubmit(): void {
+  //   //this.playerNames = Array.from({ length: this.Players }, (_, i) => `Player ${i + 1}`);
+
+  //   this.rows = Array.from({ length: this.Rounds || 0 }, () => 
+  //     Array.from({ length: this.Players || 0 }, () => '')
+  //   );
+  // }
 }

@@ -1,0 +1,39 @@
+<!-- <div class="form-container">
+    <form (ngSubmit)="OnSubmit()">
+        <div>
+            <label for="Players">Number of players:</label>
+            <input type="number" id="Players" name="players" [(ngModel)]="Players">
+        </div>
+        <br>
+        <div>
+            <label for="Rounds">Number of rounds:</label>
+            <input type="number" id="Rounds" name="rounds" [(ngModel)]="Rounds">
+        </div>
+        <br>
+        <div *ngFor="let _ of [].constructor(Players); let i = index">
+            <label for="playerName{{i}}">Player {{i + 1}} Name:</label>
+            <input type="text" id="playerName{{i}}" [(ngModel)]="playerNames[i]" name="playerName{{i}}">
+          </div>
+    </form>
+    <button type="submit">Submit</button>
+</div> -->
+
+<div class="backdrop"></div>
+<dialog open>
+    <h3>Enter the number of players and rounds</h3>
+    <form (ngSubmit)="OnSubmit()">
+        <p>
+            <label for="Players">Number of players:</label>
+            <input type="number" id="Players" name="Players" [(ngModel)]="Players">
+        </p>
+        <br>
+        <p>
+            <label for="Rounds">Number of rounds:</label>
+            <input type="number" id="Rounds" name="rounds" [(ngModel)]="Rounds">
+        </p>
+        <p class="actions">
+            <button type="button" (click)="OnClose()">Cancel</button>
+            <button type="submit" (click)="OnSubmit()">Create</button>
+          </p>
+    </form>
+</dialog>

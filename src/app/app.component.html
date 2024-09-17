@@ -6,17 +6,14 @@
     <title>Scoreboard</title>
 </head>
 <body>
-    
-    <h1> Scoreboard </h1>
-
-    <div class="boards-container">
-        <app-boardholder></app-boardholder>
-    </div>
-
-    <div class="button-area">
-        <button class="btn" (click)="OnAdd()">Add Scoreboard</button>
-    </div>
-    <p *ngIf="btnClicked == true">{{msg}}</p>
+    <header>Welcome to the Scoreboard app!</header>
+    <button (click)="OnAdd()">Add</button>
+    <main>
+        @if(btnClicked === true){
+            <app-form (close)="OnClose()" (submit)="OnSubmit($event)"/>
+        }
+        <app-boardholder [Board]="Board" />
+    </main>
 
 </body>
 </html>

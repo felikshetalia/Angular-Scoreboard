@@ -5,3 +5,26 @@ h1{
     color: indigo;
     text-shadow: pink, 10px;
 }
+
+.containers {
+    display: flex;
+    justify-content: space-between; /* Adjusts the space between the child elements */
+}
+
+.form-container, .boards-container {
+    flex: 1; /* Allows each container to grow equally */
+    margin: 10px; /* Adds some space around each container */
+}
+
+/* Additional styling for visual improvement */
+.form-container {
+    /* Your specific styles for form-container */
+}
+
+.boards-container {
+    /* Your specific styles for boards-container */
+}
+
+.button-area {
+    /* Styling for your button area, if needed */
+}
